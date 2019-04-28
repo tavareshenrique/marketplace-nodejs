@@ -1,4 +1,4 @@
-# goBarber
+# Marketplace
 
 Back-end of the Marketplace app developed in Bootcamp module 3 Node.js.
 
