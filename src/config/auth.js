@@ -1,4 +1,4 @@
 module.exports = {
-  secret: 'You Secret',
+  secret: 'GoNode03',
   ttl: 86400
 }
