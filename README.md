@@ -1,6 +1,6 @@
 # Marketplace
 
-Back-end of the Marketplace app developed in Bootcamp module 3 Node.js.
+Back-end of the Marketplace application developed in Node.js with MongoDB during module 3 of Bootcamp.
 
 ## Compatibility
 
@@ -10,23 +10,13 @@ Back-end of the Marketplace app developed in Bootcamp module 3 Node.js.
 
 ### Prerequisites
 
-It needs a connection to the database, preferably PostgreSQL. You need to add the <b>database.js</b> file to the database settings in the <b>config folder</b>.
+It needs a connection to the database, preferably MongoDB. You need to add the <b>database.js</b> file to the database settings in the <b>config folder</b>.
 
 database.js
 
 ```
 module.exports = {
-  dialect: 'postgres',
-  host: '127.0.0.1',
-  username: 'user',
-  password: 'password',
-  database: 'database',
-  operatorAliases: false,
-  define: {
-    timestamps: true,
-    underscored: true,
-    underscoredAll: true
-  }
+  uri: 'Your MongoDB "uri" with the connection data that will be imported into <b>server.js</b> to make the connection.'
 }
 
 ```
