@@ -3,7 +3,15 @@ const Ad = require('../models/Ad')
 class AdController {
   // Método para Listagem
   async index (req, res) {
-    const ads = await Ad.find()
+    const ads = await Ad.paginate(
+      {},
+      {
+        page: req.query.page || 1,
+        limit: 20,
+        populate: ['author'],
+        sort: '-createdAt'
+      }
+    )
 
     return res.json(ads)
   }
