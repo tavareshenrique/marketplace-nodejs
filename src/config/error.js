@@ -6,5 +6,8 @@ module.exports = {
 
   // Token
   TokenNotProvided: { _id: 3, error: 'Token not provided' },
-  TokenInvalid: { _id: 4, error: 'Token Invalid' }
+  TokenInvalid: { _id: 4, error: 'Token Invalid' },
+
+  // Purchase
+  ProductSold: { _id: 5, error: 'Product already sold' }
 }

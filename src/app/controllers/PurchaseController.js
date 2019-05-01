@@ -3,6 +3,7 @@ const User = require('../models/User')
 const Purchase = require('../models/Purchase')
 const PurchaseMail = require('../jobs/PurchaseMail')
 const Queue = require('../services/Queue')
+const errorConfig = require('../../config/error')
 
 class PurchaseController {
   async index (req, res) {
@@ -24,6 +25,10 @@ class PurchaseController {
 
     const purchaseAd = await Ad.findById(ad).populate('author')
     const user = await User.findById(req.userId)
+
+    if (purchaseAd.sold) {
+      return res.status(400).json(errorConfig.ProductSold)
+    }
 
     const PurchaseCreate = await Purchase.create({
       ...req.body,
