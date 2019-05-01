@@ -9,5 +9,6 @@ module.exports = {
   TokenInvalid: { _id: 4, error: 'Token Invalid' },
 
   // Purchase
-  ProductSold: { _id: 5, error: 'Product already sold' }
+  ProductSold: { _id: 5, error: 'This ad had already been purchased' },
+  YouNotAuthor: { _id: 6, error: "You're not the ad author" }
 }

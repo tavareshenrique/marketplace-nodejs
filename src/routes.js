@@ -37,7 +37,6 @@ routes.put(
   validate(validators.Ad),
   handle(controllers.AdController.update)
 )
-routes.patch('/ads/:id', handle(controllers.AdController.accept))
 routes.delete('/ads/:id', handle(controllers.AdController.destroy))
 
 /**
@@ -49,5 +48,6 @@ routes.post(
   validate(validators.Purchase),
   handle(controllers.PurchaseController.store)
 )
+routes.put('/purchases/:id', handle(controllers.ApproveController.update))
 
 module.exports = routes
