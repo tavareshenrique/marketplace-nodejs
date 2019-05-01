@@ -5,6 +5,8 @@ class AdController {
   async index (req, res) {
     const filters = {}
 
+    filters.sold = false
+
     if (req.query.price_min || req.query.price_max) {
       filters.price = {}
 
@@ -61,6 +63,14 @@ class AdController {
     await Ad.findByIdAndDelete(req.params.id)
 
     return res.send()
+  }
+
+  async accept (req, res) {
+    const ad = await Ad.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+
+    return res.json(ad)
   }
 }
 

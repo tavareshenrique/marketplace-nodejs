@@ -5,6 +5,20 @@ const PurchaseMail = require('../jobs/PurchaseMail')
 const Queue = require('../services/Queue')
 
 class PurchaseController {
+  async index (req, res) {
+    const purchase = await Purchase.paginate(
+      {},
+      {
+        page: req.query.page || 1,
+        limit: 20,
+        populate: ['ad', 'user_ad'],
+        sort: '-createdAt'
+      }
+    )
+
+    return res.json(purchase)
+  }
+
   async store (req, res) {
     const { ad, content } = req.body
 

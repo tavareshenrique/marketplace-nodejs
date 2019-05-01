@@ -37,11 +37,13 @@ routes.put(
   validate(validators.Ad),
   handle(controllers.AdController.update)
 )
+routes.patch('/ads/:id', handle(controllers.AdController.accept))
 routes.delete('/ads/:id', handle(controllers.AdController.destroy))
 
 /**
  * Purchases
  */
+routes.get('/purchases', handle(controllers.PurchaseController.index))
 routes.post(
   '/purchases',
   validate(validators.Purchase),
